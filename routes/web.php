@@ -33,21 +33,27 @@ Route::get('about',[PostController::class, 'about'])->name('posts.about');
 //    'content' => 'created content',
 //]);
 //利用find方法
-$post = Post::find(1); //找尋posts資料表id=1的貼文
-echo '標題: ' .$post->title. "<br>"; //貼文的標題
-echo '內容: ' .$post->content. "<br>"; //貼文的內容
-dd($post); //dumpand die
+//$post = Post::find(1); //找尋posts資料表id=1的貼文
+//echo '標題: ' .$post->title. "<br>"; //貼文的標題
+//echo '內容: ' .$post->content. "<br>"; //貼文的內容
+//dd($post); //dumpand die
+//
+////使用all方法
+//$post = Post::all(); //取出所有貼文
+//foreach ($posts as $post){
+//    echo '編號： ' .$post->id. "<br>";
+//    echo '標題： ' .$post->title. "<br>";
+//    echo '內容： ' .$post->content. "<br>";
+//    echo '張貼時間： ' .$post->created_at. "<br>";
+//    echo '----------------------'. "<br>";
+//}
+//dd($post);
+////查詢符合條件(id<10)的貼文，排序後取出
+//$posts = Post::where('id','<',10)->orderBy('id','DESC')->get();
+//dd($posts);
 
-//使用all方法
-$post = Post::all(); //取出所有貼文
-foreach ($posts as $post){
-    echo '編號： ' .$post->id. "<br>";
-    echo '標題： ' .$post->title. "<br>";
-    echo '內容： ' .$post->content. "<br>";
-    echo '張貼時間： ' .$post->created_at. "<br>";
-    echo '----------------------'. "<br>";
-}
-dd($post);
-
-$posts = Post::where('id','<',10)->orderBy('id','DESC')->get();
-dd($posts);
+$post = Post::find(1);
+$post->update([
+    'title' => 'updated title',
+    'content' => 'updated content',
+]);
