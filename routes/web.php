@@ -76,7 +76,9 @@ Route::get('about',[PostController::class, 'about'])->name('posts.about');
 //dd($featurePost);
 
 //取德Model
-$fourthPost = Post::find(4);
-dd($fourthPost);
+//$fourthPost = Post::find(4);
+//dd($fourthPost);
 
+$lastPost = Post::orderBy('id','DESC')->first();
+dd($lastPost);
 
