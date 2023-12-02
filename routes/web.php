@@ -58,8 +58,12 @@ Route::get('about',[PostController::class, 'about'])->name('posts.about');
 //    'content' => 'updated content',
 //]);
 
-//用save方法需要在cmder用 artisan db:seed
+//$post = Post::find(1);
+//$post->title = 'saved title';
+//$post->content = 'saved content';
+//$post->save();
+
 $post = Post::find(1);
-$post->title = 'saved title';
-$post->content = 'saved content';
-$post->save();
+//$post->delete();
+Post::destroy(2);
+Post::destroy(3,5,7);
