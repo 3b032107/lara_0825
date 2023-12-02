@@ -68,6 +68,11 @@ Route::get('about',[PostController::class, 'about'])->name('posts.about');
 //Post::destroy(2);
 //Post::destroy(3,5,7);
 
-//多筆貼文的集合
-$allPosts = Post::all();
-dd($allPosts);
+//多筆貼文的集合(Collection)
+//$allPosts = Post::all();
+//dd($allPosts);
+//
+$featurePost = Post::where('is_feature',1)->get();
+dd($featurePost);
+
+
