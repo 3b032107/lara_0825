@@ -63,7 +63,11 @@ Route::get('about',[PostController::class, 'about'])->name('posts.about');
 //$post->content = 'saved content';
 //$post->save();
 
-$post = Post::find(1);
-//$post->delete();
-Post::destroy(2);
-Post::destroy(3,5,7);
+//$post = Post::find(1);
+////$post->delete();
+//Post::destroy(2);
+//Post::destroy(3,5,7);
+
+//多筆貼文的集合
+$allPosts = Post::all();
+dd($allPosts);
