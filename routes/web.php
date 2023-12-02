@@ -72,7 +72,11 @@ Route::get('about',[PostController::class, 'about'])->name('posts.about');
 //$allPosts = Post::all();
 //dd($allPosts);
 //
-$featurePost = Post::where('is_feature',1)->get();
-dd($featurePost);
+//$featurePost = Post::where('is_feature',1)->get();
+//dd($featurePost);
+
+//取德Model
+$fourthPost = Post::find(4);
+dd($fourthPost);
 
 
