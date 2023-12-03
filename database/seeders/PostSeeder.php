@@ -13,8 +13,9 @@ class PostSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        Post::factory(3)->create();
+        //Post::factory(3)->create();
+        Post::factory(10)->hasComments(3)->create();
     }
 }

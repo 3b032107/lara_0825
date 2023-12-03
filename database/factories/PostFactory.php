@@ -14,11 +14,12 @@ class PostFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence,
-            'content' => $this->faker->paragraph,
+//            'title' => $this->faker->sentence,
+            'title' => fake()->sentence(),
+            'content' => $this->faker->paragraph(),
             'is_feature' => (bool)rand(0,1),
         ];
     }
